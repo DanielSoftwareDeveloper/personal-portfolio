@@ -1,0 +1,18 @@
+---
+import clsx from "clsx";
+
+interface Props {
+  name: string;
+  href: string;
+}
+const { name, href } = Astro.props;
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+const pathToCompare = href === "/" ? "" : href;
+---
+
+<a
+  href={href}
+  class={clsx("font-semibold text-sm md:text-base", {
+    "text-index": currentPath === pathToCompare,
+  })}>{name}</a
+>

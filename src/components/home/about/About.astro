@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+import { contactList } from "./contact-list";
+import Container from "@/components/shared/ui/Container.astro";
+---
+
+<section id="about" class="my-34">
+  <Container className="flex flex-col items-center">
+    <div class="md:w-3xl flex flex-col items-center text-center">
+      <h1 class="text-xl md:text-2xl font-bold mb-1">Daniel Reyes</h1>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-index">
+        Software Developer
+      </h2>
+      <p class="text-sm md:text-base text-pretty mt-4 mb-3 md:my-6">
+        I am a Software Developer from Jalisco Mexico.
+        <span class="font-semibold text-index"
+          >My training is in Web Development</span
+        >, my primary interest is create functional software for the real world.
+        I think that one of the essential goals of our generation is to
+        understand how works technology.
+      </p>
+      <div class="flex items-center justify-center md:justify-start space-x-8">
+        <div class="flex">
+          <a
+            href="/DanielReyesCurriculum(en).pdf"
+            download="Daniel Reyes CV (en).pdf"
+          >
+            <button class="button">Download CV</button>
+          </a>
+        </div>
+        <div class="flex items-center space-x-3">
+          {
+            contactList.map((item) => (
+              <a
+                href={item.href}
+                target="_blank"
+                class={`bg-[#303030] border border-neutral-700 p-2.5 rounded-full ${item.color} transition-colors ease-in-out`}
+              >
+                <Icon name={item.icon} />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import { projectList } from "../sections/projects/project-list";
+---
+
+<swiper-container
+  slides-per-view="1"
+  speed="500"
+  loop="true"
+  autoplay-delay="2500"
+  effect="fade"
+  class="mySwiper border border-neutral-600 rounded-lg h-full"
+>
+  {
+    projectList.map((project) => (
+      <swiper-slide>
+        <Image
+          src={project.image}
+          alt={project.name}
+          class="w-full h-64 md:h-full object-cover rounded-xl border-item"
+        />
+      </swiper-slide>
+    ))
+  }
+</swiper-container>
+<script
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"
+></script>

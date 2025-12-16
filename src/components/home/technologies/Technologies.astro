@@ -1,0 +1,17 @@
+---
+import Container from "@/components/shared/ui/Container.astro";
+import Title from "@/components/shared/ui/Title.astro";
+import { iconsList } from "./icon-list";
+import Technologie from "./Technologie.astro";
+---
+
+<section id="technologies" class="bg-section">
+  <Container>
+    <Title title="Technologies" />
+    <div
+      class="flex flex-wrap justify-center gap-x-4 gap-y-10 max-w-6xl mx-auto"
+    >
+      {iconsList.map((svg) => <Technologie icon={svg.icon} name={svg.name} />)}
+    </div>
+  </Container>
+</section>

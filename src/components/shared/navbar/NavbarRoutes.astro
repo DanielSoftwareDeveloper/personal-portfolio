@@ -1,0 +1,14 @@
+---
+import NavbarRoute from "./NavbarRoute.astro";
+import { navbarRoutes } from "./navbar-routes";
+---
+
+<ul class="flex gap-x-6 md:gap-x-8">
+  {
+    navbarRoutes.map((route) => (
+      <li>
+        <NavbarRoute name={route.label} href={route.path} />
+      </li>
+    ))
+  }
+</ul>
