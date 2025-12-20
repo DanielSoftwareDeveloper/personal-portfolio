@@ -24,7 +24,7 @@ function Sidebar() {
       ></div>
 
       <nav
-        className={`fixed top-0 bottom-0 right-0 w-80 h-screen py-4 px-8 bg-slate-100 dark:bg-zinc-800 border-l border-zinc-400 dark:border-zinc-700 shadow z-40 transition-transform duration-300 transform ${
+        className={`fixed top-0 bottom-0 right-0 w-80 h-screen py-4 px-8 bg-slate-100 dark:bg-zinc-800 border-l border-zinc-400 dark:border-zinc-700 shadow z-50 transition-transform duration-300 transform ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
