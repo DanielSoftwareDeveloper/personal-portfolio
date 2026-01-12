@@ -12,7 +12,11 @@ import Container from "@/components/shared/ui/Container.astro";
       {
         skillList.map((service) => (
           <div class="flex flex-col items-center justify-center text-center">
-            <Icon name={service.icon} size={35} class="mb-2 text-yellow-300" />
+            <Icon
+              name={service.icon}
+              size={35}
+              class={`mb-2 ${service.color}`}
+            />
             <h3 class="text-lg font-semibold mb-3">{service.name}</h3>
             <p class="text-sm">{service.description}</p>
           </div>
