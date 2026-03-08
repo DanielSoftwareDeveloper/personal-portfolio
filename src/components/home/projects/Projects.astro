@@ -8,10 +8,11 @@ import Container from "@/components/shared/ui/Container.astro";
 <section id="projects" class="my-20">
   <Container>
     <Title title="Portafolio" />
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         projectList.map((project) => (
-          <div class="card rounded-xl">
+          <div class="card rounded-xl p-4 border border-neutral-200 dark:border-neutral-800">
             <a href={project.href} target="_blank">
               <Image
                 src={project.image}
@@ -21,10 +22,22 @@ import Container from "@/components/shared/ui/Container.astro";
                 class="w-full h-60 object-cover rounded-lg mb-4"
               />
             </a>
-            <h3 class="text-lg text-center font-semibold mb-1">
-              {project.name}
-            </h3>
-            <p class="text-center">{project.description}</p>
+
+            <h3 class="text-xl text-center font-bold mb-1">{project.name}</h3>
+
+            <p class="text-center text-sm mb-4">{project.description}</p>
+
+            <div class="grid grid-cols-2 gap-3">
+              <a href={project.href} target="_blank" class="button">
+                View Project
+              </a>
+
+              {project.github && (
+                <a href={project.github} target="_blank" class="button">
+                  GitHub
+                </a>
+              )}
+            </div>
           </div>
         ))
       }

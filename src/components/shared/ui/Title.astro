@@ -5,8 +5,10 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<div class="flex items-center justify-center space-x-2 mb-8 md:mb-10 lg:mb-12">
+<div class="flex flex-col items-center mb-8 md:mb-10 lg:mb-12">
   <h2 class="text-2xl font-bold">
     {title}
   </h2>
+  <!-- Separador -->
+  <div class="w-10 h-1.5 bg-neutral-100 rounded-full mt-3.5"></div>
 </div>
