@@ -27,13 +27,13 @@ import Container from "@/components/shared/ui/Container.astro";
 
             <p class="text-center text-sm mb-4">{project.description}</p>
 
-            <div class="grid grid-cols-2 gap-3">
-              <a href={project.href} target="_blank" class="button">
+            <div class="flex gap-3">
+              <a href={project.href} target="_blank" class="button flex-1">
                 View Project
               </a>
 
               {project.github && (
-                <a href={project.github} target="_blank" class="button">
+                <a href={project.github} target="_blank" class="button flex-1">
                   GitHub
                 </a>
               )}

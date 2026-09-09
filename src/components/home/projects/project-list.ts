@@ -1,6 +1,6 @@
-import starwarsApi from "@/images/starwars.png";
 import mochiAssistant from "@/images/mochi-assistant.png";
-import spokeet from "@/images/spokeet.png";
+import mochiTemplates from "@/images/mochi-templates.png";
+import mexicoRents from "@/images/mexico-rents.png";
 
 type Project = {
   image: ImageMetadata;
@@ -12,27 +12,24 @@ type Project = {
 
 export const projectList: Project[] = [
   {
-    image: starwarsApi,
-    name: "Star Wars API",
-    description:
-      "AI music generation platform that creates original songs from simple prompts, allowing users to experiment with melodies, styles, and lyrics.",
-    href: "https://starwars-api-nine.vercel.app/",
-    github: "https://github.com/DanielSoftwareDeveloper/starwars-api",
-  },
-  {
     image: mochiAssistant,
     name: "Mochi Assistant",
     description:
-      "AI assistant that can be integrated into any website to answer questions, guide visitors, and provide instant support using custom business knowledge.",
-    href: "https://mochiassistant.com/",
-    github: "https://github.com/DanielSoftwareDeveloper/ia-assistant-app",
+      "Aplicación web SaaS que permite agregar un chat asistente de IA en cualquier sitio web. (proyecto completado)",
+    href: "https://mochiassistant.com",
   },
   {
-    image: spokeet,
-    name: "Spokeet",
+    image: mochiTemplates,
+    name: "Mochi Templates",
     description:
-      "AI-powered text-to-speech platform that transforms written text into natural sounding voices for content creators, apps, and videos.",
-    href: "https://voice-saas-app.vercel.app",
-    github: "https://github.com/DanielSoftwareDeveloper/voice-saas-app",
+      "Ecommerce de productos digitales, plantillas y recursos para creadores. (contenido en desarrollo).",
+    href: "https://mochitemplates.com",
+  },
+  {
+    image: mexicoRents,
+    name: "Mexico Rents",
+    description:
+      "Aplicación web de Real State para la venta y renta de propiedades en México. (proyecto completado)",
+    href: "https://mexicorents.com",
   },
 ];
