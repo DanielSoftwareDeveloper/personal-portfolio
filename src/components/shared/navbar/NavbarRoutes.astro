@@ -1,11 +1,15 @@
 ---
 import NavbarRoute from "./NavbarRoute.astro";
-import { navbarRoutes } from "./navbar-routes";
+
+interface Props {
+  routes: { label: string; path: string }[];
+}
+const { routes } = Astro.props;
 ---
 
-<ul class="flex gap-x-6 md:gap-x-8">
+<ul class="hidden md:flex gap-x-6 md:gap-x-8">
   {
-    navbarRoutes.map((route) => (
+    routes.map((route) => (
       <li>
         <NavbarRoute name={route.label} href={route.path} />
       </li>

@@ -1,14 +1,30 @@
 ---
 import Container from "../ui/Container.astro";
 import NavbarRoutes from "./NavbarRoutes.astro";
+import LangSwitcher from "./LangSwitcher.astro";
 import Sidebar from "./Sidebar";
+import { navbarRoutes } from "./navbar-routes";
+import { languages } from "@/i18n/ui";
+import { getLangFromUrl, useTranslatedPath, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const routes = navbarRoutes.map((route) => ({
+  path: route.path,
+  label: t(route.labelKey),
+}));
+const translatePath = useTranslatedPath(lang);
+const otherLang = lang === "es" ? "en" : "es";
+const langUrl = translatePath("/", otherLang);
+const langLabel = languages[otherLang];
 ---
 
 <header
   class="bg-neutral-800/75 backdrop-blur-md h-16 sticky top-0 z-40 shadow-lg mb-10"
 >
-  <Container className="h-full flex items-center justify-center">
-    <NavbarRoutes />
-    <Sidebar client:load />
+  <Container className="h-full flex items-center justify-between gap-6">
+    <Sidebar client:load routes={routes} langUrl={langUrl} langLabel={langLabel} />
+    <NavbarRoutes routes={routes} />
+    <LangSwitcher />
   </Container>
 </header>

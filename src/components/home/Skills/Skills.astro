@@ -3,11 +3,14 @@ import { Icon } from "astro-icon/components";
 import { skillList } from "./skill-list";
 import Title from "@/components/shared/ui/Title.astro";
 import Container from "@/components/shared/ui/Container.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <section id="skills" class="bg-section">
   <Container>
-    <Title title="Skills" />
+    <Title title={t("skills.title")} />
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 lg:gap-8">
       {
         skillList.map((service) => (
@@ -17,8 +20,8 @@ import Container from "@/components/shared/ui/Container.astro";
               size={35}
               class={`mb-2 ${service.color}`}
             />
-            <h3 class="text-lg font-semibold mb-3">{service.name}</h3>
-            <p class="text-sm">{service.description}</p>
+            <h3 class="text-lg font-semibold mb-3">{t(service.nameKey)}</h3>
+            <p class="text-sm">{t(service.descriptionKey)}</p>
           </div>
         ))
       }

@@ -1,18 +1,20 @@
-export const navbarRoutes = [
+import type { TranslationKey } from "@/i18n/ui";
+
+export const navbarRoutes: { labelKey: TranslationKey; path: string }[] = [
   {
-    label: "About",
+    labelKey: "nav.about",
     path: "#about",
   },
   {
-    label: "Skills",
+    labelKey: "nav.skills",
     path: "#skills",
   },
   {
-    label: "Projects",
+    labelKey: "nav.projects",
     path: "#projects",
   },
   {
-    label: "Tecnologies",
+    labelKey: "nav.technologies",
     path: "#technologies",
   },
 ];

@@ -1,6 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
 import Container from "../ui/Container.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <footer class="bg-neutral-800/80 backdrop-blur-md pt-14 pb-16">
@@ -8,8 +11,8 @@ import Container from "../ui/Container.astro";
     <div class=""></div>
     <div class="">
       <p class="text-sm dark:text-neutral-300 font-semibold flex items-center">
-        Made with <Icon name="general/heart" class="mx-1" size={22} />by Daniel
-        Reyes
+        {t("footer.madeWith")} <Icon name="general/heart" class="mx-1" size={22} />
+        {t("footer.credits")}
       </p>
     </div>
   </Container>

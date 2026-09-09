@@ -2,6 +2,9 @@
 import { Icon } from "astro-icon/components";
 import { contactList } from "./contact-list";
 import Container from "@/components/shared/ui/Container.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const t = useTranslations(getLangFromUrl(Astro.url));
 ---
 
 <section id="about" class="my-34">
@@ -9,21 +12,16 @@ import Container from "@/components/shared/ui/Container.astro";
     <div class="md:w-4xl flex flex-col items-center text-center">
       <h1 class="text-2xl md:text-3xl font-bold mb-1">Daniel Reyes</h1>
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-index">
-        Software Developer
+        {t("about.role")}
       </h2>
       <p class="text-sm md:text-base text-pretty mt-4 mb-3 md:my-6">
-        <span class="font-semibold text-index">Desarrollador Full Stack</span>,
-        Me especializo en la creación de aplicaciones web, automatizaciones y
-        sistemas impulsados por inteligencia artificial, tengo experiencia
-        desarrollando interfaces de usuario, backend y sistemas de
-        autenticación, me enfoco en escribir código limpio, mantenible,
-        escalable y en construir productos con experiencia de usuario óptima y
-        arquitectura sólida.
+        <span class="font-semibold text-index">{t("about.intro")}</span>,{" "}
+        {t("about.description")}
       </p>
       <div class="flex items-center justify-center md:justify-start space-x-8">
         <div class="flex">
           <a href="/Daniel%20Reyes%20CV.pdf" download="Daniel Reyes CV.pdf">
-            <button class="button">Download CV</button>
+            <button class="button">{t("about.downloadCV")}</button>
           </a>
         </div>
         <div class="flex items-center space-x-3">

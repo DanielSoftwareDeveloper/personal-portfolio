@@ -1,0 +1,26 @@
+---
+import { languages, type Language } from "@/i18n/ui";
+import { getLangFromUrl, useTranslatedPath } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const locales = Object.keys(languages) as Language[];
+---
+
+<div class="flex items-center rounded-full border border-neutral-400/70 dark:border-neutral-700 p-0.5">
+  {
+    locales.map((locale) => (
+      <a
+        href={translatePath("/", locale)}
+        class:list={[
+          "px-3 py-1 text-xs font-semibold uppercase rounded-full transition-colors duration-150",
+          locale === lang
+            ? "bg-neutral-100 text-neutral-900"
+            : "text-neutral-300 hover:text-white",
+        ]}
+      >
+        {locale.toUpperCase()}
+      </a>
+    ))
+  }
+</div>

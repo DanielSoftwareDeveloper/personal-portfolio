@@ -1,28 +1,33 @@
-export const skillList = [
+import type { TranslationKey } from "@/i18n/ui";
+
+export const skillList: {
+  icon: string;
+  nameKey: TranslationKey;
+  descriptionKey: TranslationKey;
+  color: string;
+}[] = [
   {
     icon: "services/design",
-    name: "UX/UI Design",
-    description:
-      "Intuitive and visually appealing user interfaces and experiences.",
+    nameKey: "skills.design.name",
+    descriptionKey: "skills.design.description",
     color: "text-rose-400",
   },
   {
     icon: "services/web",
-    name: "Web Apps",
-    description: "Websites and web applications tailored to your needs.",
+    nameKey: "skills.web.name",
+    descriptionKey: "skills.web.description",
     color: "text-indigo-400",
   },
   {
     icon: "services/mobile",
-    name: "Mobile Apps",
-    description: "Cross-platform mobile applications for iOS and Android.",
+    nameKey: "skills.mobile.name",
+    descriptionKey: "skills.mobile.description",
     color: "text-teal-400",
   },
   {
     icon: "services/seo",
-    name: "SEO Optimization",
-    description:
-      "Improve your website's visibility and ranking in search engines.",
+    nameKey: "skills.seo.name",
+    descriptionKey: "skills.seo.description",
     color: "text-orange-400",
   },
 ];
